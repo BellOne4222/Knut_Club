@@ -1,4 +1,6 @@
-
+### **Team Github Link**
+- https://github.com/Rjw510/KNUT_CLUB_Test
+- 
 ## Knut-Club (대학교 동아리 플랫폼 웹사이트) (2022.01 ~ 2022.10)
 
 Frontend Developer, Backend Developer
@@ -33,7 +35,6 @@ Frontend Developer, Backend Developer
 - Database: MySQL
 - Server: Apache Tomcat
 
-### **Team Github Link**
-- https://github.com/Rjw510/KNUT_CLUB_Test
+
 
 ---
