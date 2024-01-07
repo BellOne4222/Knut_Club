@@ -1,44 +1,36 @@
-[# Knut_Club
-졸업작품 동아리 플랫폼
-](https://github.com/Rjw510/KNUT_CLUB_Test)https://github.com/Rjw510/KNUT_CLUB_Test
 
-1. **BoardDAO.java:**
-    - **기능 설명:** 게시판 데이터베이스와 상호작용하는 DAO 클래스.
-    - **중요 기능:**
-        - **`updateViews(int num)`**: 특정 게시물 조회수 증가.
-        - **`delNoticeAll(int[] ids)`**: 여러 공지사항 삭제.
-        - **`delBoardAll(int[] ids)`**: 여러 게시물 삭제.
-        - **`delNotice(int num)`**: 특정 공지사항 삭제.
-        - **`delBoard(int num)`**: 특정 게시물 삭제.
-        - **`getNoticeUpdate(...)`**: 공지사항 업데이트.
-        - **`getBoardUpdate(...)`**: 게시물 업데이트.
-        - **`getNoticeWriter(int num)`**: 특정 공지사항 작성자 조회.
-        - **`getBoardWriter(int num)`**: 특정 게시물 작성자 조회.
-        - **`getBoardComment(int boardNum)`**: 특정 게시물의 댓글 조회.
-        - **`writeComment(...)`**: 댓글 작성.
-        - **`deleteComment(int comment_num)`**: 댓글 삭제.
-        - **`uploadFile(String file, int num)`**: 파일 업로드 경로 업데이트.
-2. **FileStore.java:**
-    - **기능 설명:** 파일 저장 및 관리를 담당하는 클래스.
-    - **중요 기능:**
-        - **`getFullPath(String filename)`**: 파일 전체 경로 반환.
-        - **`storeFile(MultipartFile multipartFile, String domain)`**: 업로드된 파일 저장 및 정보 반환.
-        - **`createStoreFileName(String originalFilename)`**: 저장할 파일 이름 생성.
-3. **HomeController.java:**
-    - **기능 설명:** 홈페이지의 메인 컨트롤러 클래스.
-    - **중요 기능:**
-        - 게시물 조회, 등록, 수정, 삭제 관련 메서드.
-4. **Notice.java:**
-    - **기능 설명:** 공지사항 모델 클래스.
-    - **포함된 정보:**
-        - 제목, 내용, 작성자, 작성일 등.
-5. **Board.java:**
-    - **기능 설명:** 게시물 모델 클래스.
-    - **포함된 정보:**
-        - 제목, 내용, 작성자, 작성일, 익명 여부 등.
-6. **Comment.java:**
-    - **기능 설명:** 댓글 모델 클래스.
-    - **포함된 정보:**
-        - 작성자, 작성일, 내용 등.
+## Knut-Club (대학교 동아리 플랫폼 웹사이트) (2022.01 ~ 2022.10)
 
-각 코드 파일은 주로 JDBC를 사용하여 MySQL 데이터베이스와 상호작용하고, Spring Framework를 활용하여 웹 애플리케이션의 핵심 기능을 구현합니다. 파일 업로드 및 관리는 **`FileStore`** 클래스에서 처리되며, 컨트롤러 클래스인 **`HomeController`**에서는 홈페이지의 주요 기능을 담당합니다.
+Frontend Developer, Backend Developer
+
+### Description
+
+- 대면이나 애플리케이션으로 처리해야 하는 분산된 학교 동아리 관련 업무 및 활동, 정보 들을 한 곳에서 조회 및 처리 할 수 있는 동아리 플랫폼 웹 사이트 프로젝트입니다.
+
+### **What did I do.**
+
+- 유지보수 개선을 위해 메서드 단위로 기능을 추출하여 각 메서드가 특정 기능을 수행 할 수 있도록 구조화
+    - 코드의 가독성을 높이고, 유지보수에 용이하고, 협업시 필요한 부분만 빠르게 확인하여 수정에 용이합니다.
+- 동기적인 방식으로 JDBC를 사용하여 데이터베이스 호출
+- DataBase에 접근 하기 위한 로직 & 비지니스 로직을 분리하고 오버헤더를 줄이기 위해 DAO 객체 사용
+    - 어플리케이션 호출을 데이터 저장 부분에 매핑하여 데이터 조작 기능 제공
+    - 사용자가 편리하게 사용 할 수 있게 필요한 interface로 구현한 객체 전달 가능
+- DTO 객체 사용
+    - 개별 호출의 시간 소모를 줄이기 위해 DTO를 통해 한번만 호출 하여 호출 시간 단
+- MySql을 사용하여 단일 데이터베이스로 구성하고 DB내에서 Table 분류하여 각 기능 마다 필요한 데이터 추출 용이
+- 프론트엔드는 HTML5, CSS3 사용 및 화면의 다양화와 시각적 기능을 위해 Javascript 사용하여 구현
+    - 정적인 웹사이트가 아닌 JSP를 사용하여 메인 페이지의 이미지 슬라이드, 사용자의 편의를 위한 사이드바 구현으로 동적 시각적 효과와 함께 사용자의 사용성과 편리성 향상
+- 댓글, 게시물 등록 등의 파일 업로드 기능 구현을 통해 홍보 및 게시물에 대한 피드백 등의 기능 구현
+- 학생들의 정보를 다루기 때문에 학생들만 사용할 수 있는 웹 사이트를 위해서 SMTP를 사용하여 메일 인증 기능
+    - 학교 이메일 인증을 통한 외부인 사이트 접근 차단을 통한 보안성 향상
+- 동아리 관리자와 일반 학생 및 동아리 입부 학생의 로그인, 접근 가능 페이지 구별해서 구현
+    - 동아리 임원들의 업무 처리 및 동아리 회원들의 개인정보 접근 차단 및 보안 강화
+    - 임원 회원 관리자 각각 등급을 나누어서 페이지 주소 매핑을 통해 페이지 접근 권한 부여
+
+### **Tech Stack.**
+
+- back-end : spring boot, Java
+- Database: MySQL
+- Server: Apache Tomcat
+
+---
