@@ -33,4 +33,7 @@ Frontend Developer, Backend Developer
 - Database: MySQL
 - Server: Apache Tomcat
 
+### **Team Github Link**
+- https://github.com/Rjw510/KNUT_CLUB_Test
+
 ---
